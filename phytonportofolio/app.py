@@ -20,13 +20,13 @@ def show_portfolio_section():
         {
             "title": "Project 1", 
             "description": "menganalisis sebuah data.", 
-            "image_name": "analisisdata.png", 
+            "image_name": "analisisdata.PNG", 
             "link": "https://example.com/project1"
         },
         {
             "title": "Project 2", 
             "description": "membuat sebuah web crud dinamis.", 
-            "image_name": "webcrud.png", 
+            "image_name": "webcrud.PNG", 
             "link": "https://example.com/project2"
         },
     ]
