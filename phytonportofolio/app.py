@@ -3,6 +3,12 @@ from PIL import Image
 
 # Fungsi untuk menampilkan bagian portofolio
 def show_portfolio_section():
+# Debugging information
+    st.write("Current working directory:", os.getcwd())
+    st.write("Current script directory:", os.path.dirname(os.path.abspath(__file__)))
+    st.write("Image directory exists:", os.path.exists(img_dir))
+    st.write("Contents of image directory:", os.listdir(img_dir) if os.path.exists(img_dir) else "Directory not found")
+    
     st.markdown("### My Projects")
 
     projects = [
