@@ -17,7 +17,7 @@ def show_portfolio_section():
         {
             "title": "Project 1", 
             "description": "menganalisis sebuah data.", 
-            "image": os.path.join(current_dir, "img", "analisisdata.png"), 
+            "image": "img/analisisdata.png", 
             "link": "https://example.com/project1"
         },
         {
