@@ -6,8 +6,8 @@ def show_portfolio_section():
     st.markdown("### My Projects")
 
     projects = [
-        {"title": "Project 1", "description": "menganalisis sebuah data.", "image": "phytonportofolio/img/analisisdata.png", "link": "https://example.com/project1"},
-        {"title": "Project 2", "description": "membuat sebuah web crud dinamis.", "image": "phytonportofolio/img/webcrud.png", "link": "https://example.com/project2"},
+        {"title": "Project 1", "description": "menganalisis sebuah data.", "image": "/img/analisisdata.png", "link": "https://example.com/project1"},
+        {"title": "Project 2", "description": "membuat sebuah web crud dinamis.", "image": "/img/webcrud.png", "link": "https://example.com/project2"},
     ]
 
     for project in projects:
