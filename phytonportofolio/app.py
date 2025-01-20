@@ -3,19 +3,41 @@ from PIL import Image
 import os
 
 # Fungsi untuk menampilkan bagian portofolio
-def show_portfolio_section():    
+def show_portfolio_section():
     st.markdown("### My Projects")
-
+    
+    # Debugging information
+    st.write("Current working directory:", os.getcwd())
+    
+    # Dapatkan path absolut ke direktori proyek
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    st.write("Current directory:", current_dir)
+    
     projects = [
-        {"title": "Project 1", "description": "menganalisis sebuah data.", "image": "/img/analisisdata.png", "link": "https://example.com/project1"},
-        {"title": "Project 2", "description": "membuat sebuah web crud dinamis.", "image": "/img/webcrud.png", "link": "https://example.com/project2"},
+        {
+            "title": "Project 1", 
+            "description": "menganalisis sebuah data.", 
+            "image": os.path.join(current_dir, "img", "analisisdata.png"), 
+            "link": "https://example.com/project1"
+        },
+        {
+            "title": "Project 2", 
+            "description": "membuat sebuah web crud dinamis.", 
+            "image": os.path.join(current_dir, "img", "webcrud.png"), 
+            "link": "https://example.com/project2"
+        },
     ]
 
     for project in projects:
         with st.container():
             cols = st.columns([1, 3])
             with cols[0]:
-                st.image(project["image"], width=150)
+                try:
+                    image = Image.open(project["image"])
+                    st.image(image, width=150)
+                except Exception as e:
+                    st.error(f"Tidak dapat memuat gambar: {project['image']}")
+                    st.write(f"Error: {str(e)}")
             with cols[1]:
                 st.subheader(project["title"])
                 st.write(project["description"])
